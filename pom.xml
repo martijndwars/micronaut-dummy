@@ -21,6 +21,7 @@
     <micronaut.version>3.2.4</micronaut.version>
     <exec.mainClass>dummy.Application</exec.mainClass>
     <micronaut.runtime>netty</micronaut.runtime>
+    <lombok.version>1.18.20</lombok.version>
   </properties>
 
   <repositories>
@@ -31,6 +32,12 @@
   </repositories>
 
   <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
+    </dependency>
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-inject</artifactId>
@@ -93,6 +100,11 @@
           <!-- <useIncrementalCompilation>false</useIncrementalCompilation> -->
 
           <annotationProcessorPaths combine.children="append">
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+            </path>
             <path>
               <groupId>io.micronaut</groupId>
               <artifactId>micronaut-http-validation</artifactId>
